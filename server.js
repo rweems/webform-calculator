@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
-
+const hbs = require('handlebars');
 const calculator = require('./calculator/index');
 
-// app.get('/',calculator.new);
+app.set('view engine', 'hbs');
+app.get('/',calculator.new);
 app.get('/add',calculator.add);
 app.get('/subtract',calculator.subtract);
 app.get('/multiply',calculator.multiply);
